@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sağlık</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="kapsayici" class="z-0 w-full min-h-screen">
+      <header
+        class="w-full h-[75px] flex justify-center items-center bg-white z-10"
+      >
+        <div
+          id="innerHeader"
+          class="w-full h-[40px] m-5 flex items-center justify-between text-gray-500"
+        >
+          <div
+            id="leftInnerHeader"
+            class="w-[15%] h-full border-r-2 border-r-gray-200"
+          ></div>
+          <div id="centerInnerHeader" class="w-[45%] h-full flex items-center">
+            <div id="navPlace" class="w-[60%] h-full">
+              <nav class="flex items-center justify-around w-full h-full">
+                <div class="flex items-center gap-1">
+                  <div class="iconBorders">
+                    <img
+                      src="./img/svgs/plus.svg"
+                      alt="Plus Icon"
+                      class="w-6 h-6"
+                    />
+                  </div>
+                  Methods
+                </div>
+                <div class="flex items-center gap-1 ml-2">
+                  <div class="iconBorders">
+                    <img
+                      src="./img/svgs/bacteria.svg"
+                      alt="Plus Icon"
+                      class="w-6 h-6"
+                    />
+                  </div>
+                  Problems
+                </div>
+                <div class="flex items-center gap-1 ml-2">
+                  <div class="iconBorders">
+                    <img
+                      src="./img/svgs/user.svg"
+                      alt="Plus Icon"
+                      class="w-6 h-6"
+                    />
+                  </div>
+                  Specialties
+                </div>
+              </nav>
+            </div>
+            <div
+              id="searchPlace"
+              class="w-[40%] h-full flex items-center justify-end pr-[40px]"
+            >
+              <div class="relative w-full max-w-[150px]">
+                <!-- SVG İkonu -->
+                <img
+                  src="./img/svgs/search.svg"
+                  alt="Search Icon"
+                  class="absolute w-5 h-5 text-gray-500 transform -translate-y-1/2 left-3 top-1/2"
+                />
+                <!-- Arama Çubuğu -->
+                <input
+                  type="search"
+                  placeholder="Find"
+                  class="w-full h-10 pl-10 pr-4 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            id="rightInnerHeader"
+            class="w-[40%] h-full border-l-2 border-l-gray-200 flex items-center justify-around text-black"
+          >
+            <div
+              id="profilRIH"
+              class="w-[35%] h-full flex items-center justify-between"
+            >
+              <div class="flex flex-col w-[75%] h-full justify-between">
+                <div
+                  id="nameConteiner"
+                  class="h-[50%] flex items-center justify-end"
+                >
+                  <article class="text-wrap">
+                    <p class="font-bold capitalize">Eric Balton</p>
+                  </article>
+                </div>
+                <div
+                  id="nameConteiner"
+                  class="h-[50%] flex items-center justify-end"
+                >
+                  <article class="text-wrap">
+                    <p class="font-bold capitalize">Singer</p>
+                  </article>
+                </div>
+              </div>
+              <div id="profilPhoto" class="w-[25%] h-full">
+                <div class="flex items-center justify-center">
+                  <img
+                    class="w-[60%] h-full rounded-full"
+                    src="./img/avatar-gen0a57b853b862503046ce9c8c38970c0d.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              id="buttonRIH"
+              class="w-[35%] h-full flex items-center justify-center"
+            >
+              <button class="w-[75%] h-full text-white bg-blue-600 rounded-xl">
+                Add Healer
+              </button>
+            </div>
+            <div class="relative inline-block text-left">
+              <!-- Main Button -->
+              <button
+                id="language-button"
+                class="inline-flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 w-36 hover:bg-gray-50 focus:outline-none"
+              >
+                <span class="flex items-center">
+                  <img
+                    src=".\img\svgs\usa.svg"
+                    alt="Current Language Flag"
+                    class="object-cover w-5 h-5 mr-2 rounded-full"
+                  />
+                  <span id="selected-language" class="w-auto text-left"
+                    >Eng/USA</span
+                  >
+                </span>
+                <svg
+                  class="w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                id="language-dropdown"
+                class="absolute left-0 hidden w-40 mt-2 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+              >
+                <div class="py-1">
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\usa.svg"
+                      alt="German Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    Eng/USA
+                  </a>
+                  <!-- German -->
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\german.svg"
+                      alt="German Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    Deutsch
+                  </a>
+
+                  <!-- French -->
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\france.svg"
+                      alt="French Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    Français
+                  </a>
+
+                  <!-- Spanish -->
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\spain.svg"
+                      alt="Spain Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    Español
+                  </a>
+
+                  <!-- Turkish -->
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\Turk.svg"
+                      alt="Turkey Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    Türkçe
+                  </a>
+
+                  <!-- Mandarin Chinese -->
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+                  >
+                    <img
+                      src=".\img\svgs\chine.svg"
+                      alt="China Flag"
+                      class="object-cover w-5 h-5 mr-3 rounded-sm"
+                    />
+                    中文
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="w-full h-screen">
+        <div id="mainHeader" class="w-[100%] h-[10%] mt-5 flex">
+          <div id="navMainHeader" class="w-[25%] h-full">
+            <div
+              id="leftMainH"
+              class="w-[90%] h-full flex items-center justify-start pl-[70px]"
+            >
+              <nav class="text-sm text-gray-500">
+                <a href="#" class="hover:underline">Home</a> >
+                <a href="#" class="hover:underline">Listing Page</a>
+              </nav>
+            </div>
+          </div>
+          <div
+            id="titleMainHeader"
+            class="w-[55%] h-full flex items-center justify-center"
+          >
+            <h1 class="text-4xl italic tracking-wide text-gray-900">
+              You Are On The Easiest Way Of Healing...
+            </h1>
+          </div>
+          <div
+            id="searchMainHeader"
+            class="w-[20%] h-full flex justify-end items-center mr-8 relative"
+          >
+            <!-- Dropdown Butonu -->
+            <button
+              id="sortDropdownButton"
+              class="flex items-center justify-center px-10 py-2 text-gray-600 bg-gray-100 border rounded-full w-[80%] hover:bg-gray-200 transition-colors"
+            >
+              Sort by: Distance
+              <img
+                src="./img/svgs/arrowDown.svg"
+                class="w-4 ml-2 transition-transform duration-300"
+                id="sortArrow"
+              />
+            </button>
+
+            <!-- Dropdown Menü -->
+            <div
+              id="sortDropdown"
+              class="absolute z-50 hidden w-full mt-2 bg-white border rounded-lg shadow-lg top-full"
+            >
+              <ul class="py-2">
+                <li>
+                  <button
+                    class="w-full px-4 py-2 text-left hover:bg-gray-100"
+                    onclick="updateSortText('Distance')"
+                  >
+                    Distance
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="w-full px-4 py-2 text-left hover:bg-gray-100"
+                    onclick="updateSortText('Rating')"
+                  >
+                    Rating
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="w-full px-4 py-2 text-left hover:bg-gray-100"
+                    onclick="updateSortText('Price')"
+                  >
+                    Price
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="w-full px-4 py-2 text-left hover:bg-gray-100"
+                    onclick="updateSortText('Experience')"
+                  >
+                    Experience
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="mainBody" class="w-[100%] h-[90%] flex mt-7">
+          <div id="sideMenuBody" class="w-[20%] h-full">
+            <div id="leftSideMenu" class="w-[375px] shrink-0">
+              <div class="mx-auto rounded-lg w-[80%]">
+                <div class="divide-y divide-gray-200">
+                  <!-- Display Section -->
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Display</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Specialties</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Methods</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Problem</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Language</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Location</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Type</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Gender</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Age</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Religon</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Nation</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>List View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Grid View</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Map View</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Specialty Section -->
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Root</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>General Medicine</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Cardiology</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Dentistry</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Dermatology</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Method Section -->
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Experience</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>In-Person</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Video Call</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Home Visit</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Language Section -->
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Name</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>Turkish</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>English</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>German</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Price Section -->
+                  <div class="filter-section">
+                    <button
+                      class="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50"
+                    >
+                      <span class="font-medium">Price</span>
+                      <svg
+                        class="w-5 h-5 transition-transform transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="hidden px-4 py-2 space-y-2">
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>0-200 TL</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>201-500 TL</span>
+                      </label>
+                      <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox" />
+                        <span>501+ TL</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4">
+                <button
+                  class="w-full px-4 py-2 text-white transition-colors bg-blue-500 rounded-full hover:bg-blue-600"
+                >
+                  Find Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="healCardBody" class="w-[80%] h-auto flex justify-center">
+            <div
+              id="healCardInner"
+              class="w-[100%] h-auto flex flex-col items-center gap-4"
+            >
+              <div
+                id="healCardConteiner"
+                class="w-[100%] h-[400px] bg-white rounded-xl flex flex-col justify-center items-center border-2 border-gray-200"
+              >
+                <div id="ProfilConteiner" class="h-[85%] w-[99%] mt-2 flex">
+                  <div id="profilPhoto" class="w-[20%] h-full flex relative">
+                    <img
+                      src=".\img\avatar-gen0a57b853b862503046ce9c8c38970c0d.jpg"
+                      class="z-0 w-full h-full pb-1"
+                    />
+
+                    <!-- Sol üst köşe butonu -->
+                    <button
+                      class="w-[50px] h-[50px] text-white bg-white rounded-md absolute bottom-3 left-2 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="bg-blue-600"
+                        stroke="rgb(59, 130, 246)"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-plus"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="M12 5v14" />
+                      </svg>
+                    </button>
+
+                    <!-- Sağ üst köşe butonu -->
+                    <button
+                      class="w-[50px] h-[50px] text-white bg-blue-600 rounded-md absolute bottom-3 right-2 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-heart"
+                      >
+                        <path
+                          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    id="personInfoConteiner"
+                    class="w-[80%] h-full flex items-center justify-center"
+                  >
+                    <div
+                      id="innerPersonInfo"
+                      class="w-[98%] h-[90%] flex justify-center items-center"
+                    >
+                      <div
+                        id="leftInnerPerson"
+                        class="w-[45%] h-full border-r-[3px] border-gray-200"
+                      >
+                        <div
+                          id="nameLeftInnerPerson"
+                          class="w-full h-[25%] flex"
+                        >
+                          <div
+                            id="addsvg"
+                            class="w-[10%] h-full flex justify-center items-start"
+                          >
+                            <img
+                              src="./img/svgs/addperson.svg"
+                              alt="Add Icon"
+                            />
+                          </div>
+                          <div id="namePerson" class="w-[40%] h-full">
+                            <div>
+                              <h4 class="text-2xl font-semibold">
+                                Jannefer Guithman
+                              </h4>
+                            </div>
+                            <div>
+                              <h6 class="text-sm font-semibold text-gray-600">
+                                @jnnfrglthmn
+                              </h6>
+                            </div>
+                          </div>
+                          <div
+                            id="infosvg"
+                            class="w-[10%] h-full flex items-start justify-start ml-4"
+                          >
+                            <img
+                              src="./img/svgs/info.svg"
+                              alt="Add Icon"
+                              class="mt-1"
+                            />
+                            <img
+                              src="./img/svgs/verify.svg"
+                              alt="Add Icon"
+                              class="mt-1 ml-2"
+                            />
+                          </div>
+                          <div
+                            id="sexAndYearsvg"
+                            class="w-[35%] h-full flex ml-4 justify-start items-start"
+                          >
+                            <img
+                              src="./img/svgs/venus-svgrepo-com.svg"
+                              alt="Add Icon"
+                              class="mt-1 -rotate-45"
+                            />
+                            <h6 class="mt-1 ml-2 text-sm font-semibold">
+                              39 Y
+                            </h6>
+                          </div>
+                        </div>
+                        <div
+                          id="specialitiesLeftInnerPerson"
+                          class="w-full h-[25%]"
+                        >
+                          <div class="w-full h-[35%] ml-3">
+                            <h6 class="text-sm font-semibold">Specialities:</h6>
+                          </div>
+                          <div class="w-full h-[65%] ml-3 flex items-center">
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Hemşire
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Saç Ekim Uzmanı
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Sağlık Çalışanı
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              +10
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          id="problemsLeftInnerPerson"
+                          class="w-full h-[25%] pr-[50px]"
+                        >
+                          <div
+                            class="w-full h-[35%] ml-3 border-t-[1px] border-gray-200"
+                          >
+                            <h6 class="text-sm font-semibold">Problems:</h6>
+                          </div>
+                          <div class="w-full h-[65%] ml-3 flex items-center">
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Saç Dökülmesi
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Kellik
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              Saç Kıran
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              +10
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          id="methodsLeftInnerPerson"
+                          class="w-full h-[25%] pr-[50px]"
+                        >
+                          <div
+                            class="w-full h-[35%] ml-3 border-t-[1px] border-gray-200"
+                          >
+                            <h6 class="text-sm font-semibold">Methods:</h6>
+                          </div>
+                          <div class="w-full h-[65%] ml-3 flex items-center">
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              BCD Saç Ekim Yöntemi
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              BCD Saç Ekim Yöntemi
+                            </button>
+                            <button
+                              id="dropdownButton"
+                              class="flex items-center justify-center w-auto px-3 py-1 mr-2 text-gray-900 bg-blue-300 rounded-full hover:bg-blue-600 hover:text-white"
+                            >
+                              +10
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="rightInnerPerson" class="w-[55%] h-full flex">
+                        <div
+                          class="w-[60%] h-full flex items-center justify-center"
+                        >
+                          <div
+                            class="w-[90%] h-[95%] flex items-center flex-col"
+                          >
+                            <div class="w-[90%] h-[20%]">
+                              <h6 class="text-sm font-semibold">Experience:</h6>
+                              <h2 class="text-lg font-semibold">13 Year</h2>
+                            </div>
+                            <div
+                              class="w-[90%] h-[20%] border-t-[1px] border-gray-200"
+                            >
+                              <h6 class="text-sm font-semibold">Languages:</h6>
+                              <h2 class="text-lg font-semibold">
+                                ENG: Nt,It: B2...
+                              </h2>
+                            </div>
+                            <div
+                              class="w-[90%] h-[20%] border-t-[1px] border-gray-200"
+                            >
+                              <h6 class="text-sm font-semibold">Nation:</h6>
+                              <h2 class="text-lg font-semibold">U.S.A.</h2>
+                            </div>
+                            <div
+                              class="w-[90%] h-[20%] border-t-[1px] border-gray-200"
+                            >
+                              <h6 class="text-sm font-semibold">Root:</h6>
+                              <h2 class="text-lg font-semibold">
+                                Italy,America...
+                              </h2>
+                            </div>
+                            <div
+                              class="w-[90%] h-[20%] border-t-[1px] border-gray-200"
+                            >
+                              <h6 class="text-sm font-semibold">Relation:</h6>
+                              <h2 class="text-lg font-semibold">
+                                Christian - Prot....
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="w-[40%] h-full flex justify-center items-center"
+                        >
+                          <div
+                            class="w-[95%] h-[95%] flex items-center flex-col gap-3"
+                          >
+                            <button
+                              class="w-[90%] h-[17%] bg-green-600 rounded-lg text-white"
+                            >
+                              <h5>Overall Score: 8,7/10</h5>
+                            </button>
+                            <button
+                              class="w-[90%] h-[17%] bg-green-600 rounded-lg text-white"
+                            >
+                              <h5>Score for This Service: --</h5>
+                            </button>
+                            <button
+                              class="w-[90%] h-[17%] bg-blue-600 rounded-lg text-white"
+                            >
+                              <h5>Location: New Jersey / USA</h5>
+                            </button>
+                            <button
+                              class="w-[90%] h-[17%] bg-blue-600 rounded-lg text-white"
+                            >
+                              <h5>Type: In Person, Online</h5>
+                            </button>
+                            <button
+                              class="w-[90%] h-[17%] bg-blue-600 rounded-lg text-white"
+                            >
+                              <h5>Price: 350€ - 8500€</h5>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="infoConteiner"
+                  class="h-[15%] w-[100%] border-t-[1px] border-t-gray-200 flex items-center justify-center gap-3"
+                >
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    About Me
+                  </button>
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    Services/Product
+                  </button>
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    Education
+                  </button>
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    Rate This Service
+                  </button>
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    Read Comments
+                  </button>
+                  <button
+                    class="w-[15%] h-[65%] bg-blue-600 rounded-full text-white hover:bg-blue-700"
+                  >
+                    Contact
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="px-4 py-12 text-black bg-white">
+        <div class="mx-auto w-[90%]">
+          <!-- Üst Kısım -->
+          <div class="grid grid-cols-1 gap-8 mb-8 md:grid-cols-5">
+            <!-- Logo + Şirket Adı -->
+            <div class="mb-6 md:mb-0">
+              <h2 class="flex items-center mb-4 text-2xl font-bold">
+                <span class="mr-2">🌐</span>
+                <!-- Emoji logo -->
+                EndA Head
+              </h2>
+            </div>
+
+            <!-- Şirket -->
+            <div>
+              <h3 class="mb-4 font-semibold">Şirket</h3>
+              <ul class="p-0 space-y-2 list-none">
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Hakkımızda</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Şartlar ve Koşullar</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Gizlilik Politikası</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Kaynaklar -->
+            <div>
+              <h3 class="mb-4 font-semibold">Kaynaklar</h3>
+              <ul class="p-0 space-y-2 list-none">
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >İncelemeler</a
+                  >
+                </li>
+                <li class="">
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Yorumlar</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Plan a Web Erişilebilirliği</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Yardım -->
+            <div>
+              <h3 class="mb-4 font-semibold">Yardım</h3>
+              <ul class="p-0 space-y-2 list-none">
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black">SSS</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Yardım Merkezi</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-black"
+                    >Geri Bildirim</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="w-[10% h-auto] flex gap-3">
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full"
+              >
+                <img src="./img/svgs/facebook.svg" />
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full"
+              >
+                <img src="./img/svgs/insta.svg" /></button
+              ><button
+                class="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full"
+              >
+                <img src="./img/svgs/tiktok.svg" /></button
+              ><button
+                class="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full"
+              >
+                <img src="./img/svgs/x.svg" /></button
+              ><button
+                class="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full"
+              >
+                <img src="./img/svgs/linkedn.svg" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Alt Çizgi -->
+          <hr class="mb-8 border-gray-700" />
+
+          <!-- Telif Hakkı -->
+          <div class="text-lg text-center text-gray-400">
+            <p>© <span id="currentYear"></span> Find A Heal.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    // Dinamik yıl için
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+    document.querySelectorAll(".filter-section button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        const arrow = button.querySelector("svg");
+
+        // Toggle the content visibility
+        content.classList.toggle("hidden");
+
+        // Rotate the arrow
+        if (content.classList.contains("hidden")) {
+          arrow.classList.remove("rotate-180");
+        } else {
+          arrow.classList.add("rotate-180");
+        }
+      });
+    });
+
+    // Dil seçimini yönet
+    document.querySelectorAll("#language-dropdown a").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Seçilen dilin verilerini al
+        const flagSrc = item.querySelector("img").src;
+        const langText = item.textContent.trim();
+
+        // Ana butonu güncelle
+        document.querySelector("#selected-language").textContent = langText;
+        document.querySelector("#language-button img").src = flagSrc;
+
+        // Dropdown'u kapat
+        document.getElementById("language-dropdown").classList.add("hidden");
+      });
+    });
+
+    // Dropdown toggle
+    const languageButton = document.getElementById("language-button");
+    const languageDropdown = document.getElementById("language-dropdown");
+
+    languageButton.addEventListener("click", () => {
+      languageDropdown.classList.toggle("hidden");
+    });
+
+    // Dışarı tıklayınca kapat
+    document.addEventListener("click", (e) => {
+      if (
+        !languageButton.contains(e.target) &&
+        !languageDropdown.contains(e.target)
+      ) {
+        languageDropdown.classList.add("hidden");
+      }
+    });
+
+    // Handle language selection
+    document.querySelectorAll("#language-dropdown a").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const langText = item.textContent.trim();
+        selectedLanguage.textContent = langText;
+        // Adjust text size for longer language names
+        if (langText.length > 7) {
+          selectedLanguage.classList.add("text-xs");
+        } else {
+          selectedLanguage.classList.remove("text-xs");
+        }
+        languageDropdown.classList.add("hidden");
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("healCardInner");
+      const existingCard = document.getElementById("healCardConteiner");
+
+      if (!container || !existingCard) {
+        console.error("Container veya healCardConteiner bulunamadı!");
+        return;
+      }
+
+      for (let i = 0; i < 3; i++) {
+        let newCard = existingCard.cloneNode(true); // Mevcut kartı kopyala
+        newCard.id = `healCardConteiner${i}`; // Aynı ID'leri önlemek için yeni ID ata
+        container.appendChild(newCard);
+      }
+    });
+  </script>
+</html>

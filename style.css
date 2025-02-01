@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.iconBorders {
+  border: 1px solid rgb(37 99 235);
+  border-radius: 50%;
+  padding: 1px;
+  margin: 5px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#kapsayici {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(254, 250, 249);
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+  background: #333;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
